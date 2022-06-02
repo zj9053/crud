@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--BindingException检查地址是否到类-->
+<mapper namespace="com.zhou.crud.mapper.UserMapper">
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.zhou.crud.entity.User">
+        INSERT INTO user(
+            username,password
+        ) VALUES (
+            #{username},#{password}
+           )
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        DELETE FROM user WHERE id = #{id};
+    </delete>
+
+    <update id="update">
+        UPDATE user SET
+            username = #{username},
+            password = #{password}
+        WHERE id = #{id}
+    </update>
+
+    <select id="findAll" resultType="com.zhou.crud.entity.User">
+        select * from user;
+    </select>
+
+<!--    id查询-->
+    <select id="findOne" resultType="com.zhou.crud.entity.User">
+        SELECT * FROM user where id = #{id};
+    </select>
+
+    <select id="findName" resultType="com.zhou.crud.entity.User">
+        SELECT username FROM user where username = #{username}
+    </select>
+
+</mapper>
