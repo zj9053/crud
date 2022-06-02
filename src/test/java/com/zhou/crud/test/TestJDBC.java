@@ -35,17 +35,17 @@ public class TestJDBC {
         return num;
     }
 
-//    public static Boolean bb(String zifiu){
-//        String regex = "[^^'\n\r\t\b\f \\\\#$%&*+]+";//意思是：匹配不含这些特殊字符的其他任意一个或多个字符
-//
-//        if (zifiu.matches(regex)){
-//            System.out.println("匹配成功");
-//            return true;
-//        }else {
-//            System.out.println("不能含特殊字符");
-//            return false;
-//        }
-//    }
+    public static Boolean bb(String zifiu){
+        String regex = "[^^'\n\r\t\b\f \\\\#$%&*+]+";//意思是：匹配不含这些特殊字符的其他任意一个或多个字符
+
+        if (zifiu.matches(regex)){
+            System.out.println("匹配成功");
+            return true;
+        }else {
+            System.out.println("不能含特殊字符");
+            return false;
+        }
+    }
 
 }
 
